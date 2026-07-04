@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surat Untuk Nayla 💌</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd6e7,#f3d9ff);
+padding:20px;
+}
+
+/* container */
+.container{
+text-align:center;
+}
+
+/* amplop */
+.envelope{
+font-size:120px;
+cursor:pointer;
+transition:.5s;
+}
+
+.envelope:hover{
+transform:scale(1.1);
+}
+
+/* surat */
+.surat{
+display:none;
+max-width:700px;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+animation:muncul 1s;
+}
+
+/* VIDEO */
+.video-box{
+margin-top:20px;
+}
+
+video{
+width:100%;
+max-width:450px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* text */
+h1{
+color:#ff4f81;
+margin-bottom:20px;
+}
+
+p{
+color:#555;
+line-height:2;
+text-align:left;
+}
+
+/* tombol */
+button{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:#ff4f81;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+@keyframes muncul{
+from{opacity:0; transform:translateY(30px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- AMPLOP -->
+<div id="amplop">
+
+<h2 style="color:#ff4f81;margin-bottom:20px;">
+💌 Ada Surat Untuk Nayla 💌
+</h2>
+
+<div class="envelope" onclick="bukaSurat()">
+📩
+</div>
+
+<p style="margin-top:15px;color:#666;">
+Klik amplop untuk membuka surat
+</p>
+
+</div>
+
+<!-- SURAT -->
+<div class="surat" id="surat">
+
+<h1>Untuk Nayla 💖</h1>
+
+<p>
+Hai Nayla 👋
+
+Happy birthday ya 🎉🎂
+
+Nggak terasa kau udah makin tua aja wkwk 😆
+Semoga hari ini kau happy terus lah, nggak ada yang bikin bad mood, semua lancar-lancar aja ✨ sehat selalu 😊
+
+Aku cuma mau bilang makasih ya udah jadi kawan yang baik 😊
+Senang kali bisa kenal kau 👍
+
+Semoga apa yang kau mau pelan-pelan bisa tercapai ya 💫 Aamiin.
+
+Enjoy ya harimu seng 💖 jangan banyak mikir-mikir.
+</p>
+
+<div class="video-box">
+<video controls>
+<source src="video nel.mp4" type="video/mp4">
+Browser kamu tidak mendukung video.
+</video>
+</div>
+
+<a href="surprise.html">
+<button>🎉 Lihat Kejutan Terakhir</button>
+</a>
+
+</div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="musik" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function bukaSurat(){
+
+    document.getElementById("amplop").style.display="none";
+    document.getElementById("surat").style.display="block";
+
+    const musik=document.getElementById("musik");
+
+    musik.volume=0.5;
+
+    musik.play().catch(function(err){
+        console.log(err);
+    });
+
+}
+
+</script>
+
+</body>
+</html>

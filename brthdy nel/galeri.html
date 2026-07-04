@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kenangan Kita 📸</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffd6e7,#f3d9ff);
+min-height:100vh;
+padding:40px 20px;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+text-align:center;
+}
+
+h1{
+color:#ff4f81;
+font-size:42px;
+margin-bottom:15px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:40px;
+}
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.photo{
+
+background:white;
+
+padding:15px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.1);
+
+transition:.4s;
+
+transform:rotate(-2deg);
+
+}
+
+.photo:nth-child(even){
+
+transform:rotate(2deg);
+
+}
+
+.photo:hover{
+
+transform:scale(1.05);
+
+}
+
+.photo img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:15px;
+
+}
+
+.caption{
+
+margin-top:10px;
+
+color:#666;
+
+font-size:15px;
+
+}
+
+button{
+
+margin-top:50px;
+
+padding:14px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f81;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+.heart{
+
+position:fixed;
+
+top:-20px;
+
+font-size:22px;
+
+animation:fall linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes fall{
+
+to{
+transform:translateY(110vh);
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>📸 with u😘 📸</h1>
+
+<p class="subtitle">
+Beberapa momen yang membuat hari-hari menjadi lebih berwarna 💖
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="gambar/nel.jpeg">
+<div class="caption">
+🫂nayri/ayri💕
+</div>
+</div>
+
+<div class="photo">
+<img src="gambar/nel1.jpeg">
+<div class="caption">
+🫂nayri/ayri💕
+</div>
+</div>
+
+<div class="photo">
+<img src="gambar/nel2.jpeg">
+<div class="caption">
+🫂nayri/ayri💕
+</div>
+</div>
+
+<div class="photo">
+<img src="gambar/nel3.jpeg">
+<div class="caption">
+🫂nayri/ayri💕
+</div>
+</div>
+
+<div class="photo">
+<img src="gambar/nel4.jpeg">
+<div class="caption">
+ini pas 20 th
+</div>
+</div>
+
+<div class="photo">
+<img src="gambar/nel5.jpeg">
+<div class="caption">
+🫂💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel6.jpeg">
+<div class="caption">
+🫂💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel7.jpeg">
+<div class="caption">
+🫂hello 21!💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel8.jpeg">
+<div class="caption">
+🫂manah with u💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel9.jpeg">
+<div class="caption">
+🫂2 thn yang lalu💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel10.jpeg">
+<div class="caption">
+🫂💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel11.jpeg">
+<div class="caption">
+🫂photobox pertama💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel12.jpeg">
+<div class="caption">
+🫂💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel13.jpeg">
+<div class="caption">
+🫂💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel14.jpeg">
+<div class="caption">
+🫂blue date💕
+</div>
+</div>
+<div class="photo">
+<img src="gambar/nel15.jpeg">
+<div class="caption">
+🫂soft date💕
+</div>
+</div>
+</div>
+<div>
+        NB:kalok ketemu harus foto ,biar banyak foto nya.
+</div>
+
+<a href="surat.html">
+<button>
+💌 Baca Surat Spesial
+</button>
+</a>
+
+</div>
+
+<script>
+
+function hati(){
+
+const heart =
+document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.className="heart";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*3+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},7000);
+
+}
+
+setInterval(hati,700);
+
+</script>
+
+</body>
+</html>

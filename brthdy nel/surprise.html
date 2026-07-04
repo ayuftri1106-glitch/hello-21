@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nayla 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(135deg,#ff9ecf,#e2b8ff);
+text-align:center;
+position:relative;
+}
+
+.container{
+z-index:2;
+padding:20px;
+}
+
+h1{
+font-size:70px;
+color:white;
+text-shadow:0 0 20px rgba(255,255,255,.8);
+animation:glow 2s infinite;
+}
+
+h2{
+color:white;
+margin-top:20px;
+font-size:30px;
+}
+
+p{
+color:white;
+margin-top:15px;
+font-size:18px;
+}
+
+button{
+margin-top:35px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:white;
+color:#ff4f81;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes glow{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.05);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+.heart{
+
+position:absolute;
+top:-50px;
+font-size:25px;
+
+animation:fall linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes fall{
+
+to{
+transform:translateY(110vh);
+}
+
+}
+
+.confetti{
+
+position:absolute;
+top:-20px;
+
+font-size:25px;
+
+animation:jatuh linear forwards;
+
+}
+
+@keyframes jatuh{
+
+to{
+transform:
+translateY(110vh)
+rotate(720deg);
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>
+🎂 HAPPY BIRTHDAY 🎂
+</h1>
+
+<h2>
+Nayla Putri Syahillah Hsb 💖
+</h2>
+
+<p>
+Semoga semua impianmu tercapai ✨<br>
+Semoga selalu bahagia 🌸<br>
+Semoga selalu sehat 💖
+</p>
+
+<a href="akhir.html">
+<button>
+❤️ Pesan Terakhir
+</button>
+</a>
+
+</div>
+
+<script>
+
+/* HATI */
+
+function buatHati(){
+
+const heart =
+document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.className="heart";
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*3+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},7000);
+
+}
+
+setInterval(buatHati,300);
+
+/* CONFETTI */
+
+const emoji =
+["🎉","✨","🎊","💖","🌸"];
+
+function confetti(){
+
+const c =
+document.createElement("div");
+
+c.className="confetti";
+
+c.innerHTML =
+emoji[Math.floor(
+Math.random()*emoji.length
+)];
+
+c.style.left=
+Math.random()*100+"vw";
+
+c.style.animationDuration=
+(Math.random()*3+2)+"s";
+
+document.body.appendChild(c);
+
+setTimeout(()=>{
+c.remove();
+},5000);
+
+}
+
+setInterval(confetti,150);
+
+</script>
+
+</body>
+</html>

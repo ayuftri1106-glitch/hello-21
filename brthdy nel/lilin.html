@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiup Lilin Nayla 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ffd6e7,#f3d9ff);
+overflow:hidden;
+text-align:center;
+padding:20px;
+}
+
+.card{
+
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(15px);
+
+padding:40px;
+border-radius:30px;
+
+box-shadow:
+0 8px 32px rgba(0,0,0,.15);
+
+max-width:600px;
+width:90%;
+}
+
+h1{
+color:#ff4f81;
+margin-bottom:15px;
+}
+
+p{
+color:#666;
+line-height:1.8;
+}
+
+#cake{
+font-size:120px;
+margin:25px 0;
+transition:.5s;
+}
+
+button{
+
+padding:14px 30px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f81;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+.status{
+margin-top:20px;
+font-weight:bold;
+color:#ff4f81;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>🎂 Tiup Lilinnya Dulu 🎂</h1>
+
+<p>
+Sebelum membuka kejutan berikutnya,
+tiup lilin ini dulu ya Nayla 💖
+</p>
+
+<div id="cake">
+🕯️🎂🕯️
+</div>
+<button onclick="mulaiMic()">
+🎤 Aktifkan Mikrofon
+</button>
+
+<div id="status" class="status">
+Menunggu mikrofon...
+</div>
+
+</div>
+
+<script>
+
+async function mulaiMic(){
+
+document.getElementById("status").innerHTML =
+"🎤 Mikrofon aktif... tiup lilinnya 💨";
+
+try{
+
+const stream =
+await navigator.mediaDevices.getUserMedia({
+audio:true
+});
+
+const audioContext =
+new(window.AudioContext||
+window.webkitAudioContext)();
+
+const source =
+audioContext.createMediaStreamSource(stream);
+
+const analyser =
+audioContext.createAnalyser();
+
+source.connect(analyser);
+
+const data =
+new Uint8Array(analyser.frequencyBinCount);
+
+function cekSuara(){
+
+analyser.getByteFrequencyData(data);
+
+let volume=0;
+
+for(let i=0;i<data.length;i++){
+
+volume+=data[i];
+
+}
+
+volume/=data.length;
+
+if(volume>45){
+
+document.getElementById("cake").innerHTML=
+"🎂";
+
+document.getElementById("status").innerHTML=
+"🎉 Lilin berhasil dipadamkan!";
+
+setTimeout(()=>{
+
+alert(
+"Happy Birthday Nayla 💖🎂"
+);
+
+},500);
+
+setTimeout(()=>{
+
+window.location.href=
+"tentang.html";
+
+},2500);
+
+return;
+
+}
+
+requestAnimationFrame(
+cekSuara
+);
+
+}
+
+cekSuara();
+
+}catch(error){
+
+document.getElementById("status").innerHTML=
+"❌ Izin mikrofon ditolak";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
